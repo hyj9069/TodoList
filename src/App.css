@@ -1,38 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+ul,
+li,
+ol {
+  list-style: none;
+}
+button,
+input {
+  border: none;
+  background: none;
+  line-height: 1;
+}
 .App {
+  padding: 30px 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  background: #333;
+}
+.wrapper {
+  margin: 50px auto;
+  overflow: hidden;
+  width: 50%;
+  min-width: 500px;
+  background: lightgray;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 20px;
+  background: slateblue;
+  color: #fff;
+}
+h1 {
+  color: #cebde6;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo_add {
   display: flex;
-  flex-direction: column;
+  margin: 15px 20px;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 30px;
+}
+.todo_add input {
+  flex-grow: 1;
+}
+.todo_add button {
+  font-size: 20px;
+  cursor: pointer;
+}
+.todo_list {
+  overflow-y: auto;
+  height: 300px;
+}
+.todo_list::-webkit-scrollbar {
+  width: 25px;
+}
+.todo_list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.todo_list::-webkit-scrollbar-thumb {
+  border: 5px solid lightgray;
+  background: #cebde6;
+  border-radius: 30px;
+}
+.todo_list li {
+  display: flex;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 5px 20px;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 5px;
 }
-
-.App-link {
-  color: #61dafb;
+.todo_list li span {
+  flex-grow: 1;
+  cursor: pointer;
+  user-select: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo_list li .icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.todo_list li input {
+  flex-grow: 1;
+}
+.completed {
+  font-style: italic;
+  color: #999;
+  text-decoration: line-through;
 }
